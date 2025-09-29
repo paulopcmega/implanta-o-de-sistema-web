@@ -1,0 +1,187 @@
+* {
+    margin: 3px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222222;
+    color: white;
+}
+
+#cabeçalho {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: white;
+    /* Cor do cabeçalho financeiro */
+}
+
+table {
+    color: black;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* Borda da tabela */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar a tabela */
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    color: #fff;
+    background-color: #0c4485;
+    /* Cor de fundo do cabeçalho da tabela financeira */
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: calc(50% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+}
+
+
+/* Estilos para tornar a tabela responsiva */
+@media only screen and (max-width: 600px) {
+    table {
+        width: 100%;
+
+    }
+
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    /* Estilos para diminuir o tamanho dos campos de entrada em dispositivos menores */
+    input[type="text"] {
+        width: 100%;
+        padding: 4px;
+    }
+}
+
+#cliente,
+#servico,
+#colaborador {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+
+/* Estilos para alinhar rótulos e campos de entrada */
+label {
+    display: inline-block;
+    width: 10%;
+    box-sizing: border-box;
+    padding-right: 10px;
+    /* Espaçamento à direita para separar o rótulo do campo de entrada */
+}
+
+input[type="text"] {
+    display: inline-block;
+    width: calc(50% - 20px);
+    /* 50% menos 10px de espaçamento à direita do rótulo */
+}
+
+#descricao {
+    height: 200px;
+    width: 60%;
+    align-items: flex-start;
+}
+
+#gerar-num-container {
+    display: flex;
+    align-items: center;
+}
+
+#Gerar-num {
+    margin-left: 10px;
+}
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.custom-select .select-items {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: auto;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-select .select-items div {
+    display: table-row;
+}
+
+.custom-select .select-items div div {
+    display: table-cell;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.custom-select select:checked+.select-items {
+    display: block;
+}
+
+#Cadastrocliente {
+    display: none;
+}
+
+#logo {
+    width: 150px;
+    /* Define a largura */
+    height: auto;
+    /* Mantém a proporção */
+    border: 2px solid #222222;
+    /* Borda */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    margin: 10px;
+    /* Margem */
+    display: block;
+    /* Centraliza na tela */
+    margin-left: auto;
+    margin-right: auto;
+}

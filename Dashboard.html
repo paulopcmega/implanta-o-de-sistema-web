@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css/Dashboard.css" />
+    <title>InfoTech Dashboard</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+      <img src="imagens.img/logo.png" alt="logo" id="logo" />
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Dashboard.html">Agendamento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Financeiro.html">financeiro</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2 id="cabeçalho">Dash Board - Serviços</h2>
+
+    <div id="gerar-num-container" style="display: none">
+      <label for="chamado">Nº do chamado :</label>
+      <input type="text" id="chamado" autofocus />
+      <button id="Gerar-num" class="btn btn-primary" onclick="gerarNumero()">Gerar Número</button>
+    </div>
+
+    <div>
+      <label for="cliente">Cliente:</label>
+      <select id="cliente">
+        <!-- As opções serão adicionadas aqui -->
+      </select>
+
+      <input
+        id="mostrarCadastrocliente"
+        type="button"
+        value="Novo Cliente"
+        style="
+          background-color: #1751c4;
+          color: white;
+          padding: 10px;
+          margin: 12px 0 0 0;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        "
+        onclick="mostrarCadastrocliente()"
+      />
+    </div>
+    <div id="Cadastrocliente">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Nome" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email" required /><br />
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" placeholder="Telefone" required /><br />
+
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" placeholder="Endereço" required /><br />
+
+      <label></label>
+      <button
+        style="
+          background-color: #1751c4;
+          color: white;
+          padding: 10px;
+          margin: 12px 0 0 0;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        "
+        onclick="cadastrarCliente()">
+        Cadastrar
+      </button>
+    </div>
+
+    <div>
+      <label for="servico">Tipo do Serviço:</label>
+      <select id="servico">
+        <option value="Troca de tela">Troca de tela</option>
+        <option value="Troca de bateria">Troca de bateria</option>
+        <option value="Troca de tampa">Troca de tampa</option>
+        <option value="Troca de botão">Troca de botão</option>
+        <option value="Troca de câmera">Troca de câmera</option>
+        <option value="Troca de conector">Troca de conector</option>
+        <option value="Reparo ou troca de placa">Reparo ou troca de placa</option>
+        <option value="DOC de carga">DOC de carga</option>
+        <option value="Banho químico">Banho químico</option>
+        <option value="Resolução de problemas no software">Resolução de problemas no software
+</option>
+        <!-- Adicione quantas opções de serviço desejar -->
+      </select>
+    </div>
+
+    <div>
+      <label for="colaborador" class="custom-select">Colaborador:</label>
+      <select id="colaborador"></select>
+    </div>
+
+    <div>
+      <label for="data">Data:</label>
+      <input type="date" id="data" />
+    </div>
+
+    <div>
+      <label for="descricao">Detalhes do Serviço</label>
+      <textarea
+        id="descricao"
+        autofocus
+        style="
+          caret-color: rgb(0, 0, 0);
+          text-align: left;
+          max-width: 250px;
+          max-height: 80px;
+          overflow: auto;
+        "
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="custo">Despesa:</label>
+      <input type="number" id="custo" placeholder="Custo" required />
+    </div>
+
+    <div>
+      <label for="valor-servico">Retorno:</label>
+      <input
+        type="number"
+        id="valor-servico"
+        placeholder="Valor do Serviço"
+        required
+      />
+    </div>
+
+    <button
+      id="adc-serv"
+      class="btn btn-secondary"
+      style="
+        background-color: #1751c4;
+        color: white;
+        padding: 10px;
+        margin: 12px 0 0 0;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      "
+      onclick="gerarNumero() + adicionarServico()"
+    >
+      Adicionar serviço
+    </button>
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Nº do Chamado</th>
+          <th>Serviço</th>
+          <th>Descrição</th>
+          <th>Colaborador</th>
+          <th>Cliente</th>
+          <th>Data</th>
+          <th>Despesa</th>
+          <th>Retorno</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- As linhas serão adicionadas aqui -->
+      </tbody>
+    </table>
+
+    <script link type="text/javascript" src="arquivos.js/Dashboard.js"></script>
+    <script>
+      function verificarLogin() {
+        var usuarioLogado = localStorage.getItem("usuarioLogado");
+        if (!usuarioLogado) {
+          alert(
+            "Você não está logado. Por favor, faça login para acessar esta página."
+          );
+          window.location.href = "login.html"; // Redireciona para a página de login
+        }
+      }
+
+      function navegarParaCadastro() {
+        verificarLogin();
+        // Se o usuário estiver logado, continua para a página de cadastro de colaborador
+        window.location.href = "cadastroColaborador.html";
+      }
+
+      verificarLogin(); // Chama a verificação de login ao carregar a página
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100vw;
+    margin: 3px;
+    background-color: rgb(49, 48, 48);
+}
+
+h2 {
+    color: azure;
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+form {
+    margin: 50px auto;
+    width: 300px;
+    border: 1px solid #bbb8b8;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    color: rgba(0, 0, 0, 0.9); ;
+    width: 300px;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #a5a2a2;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#cadastrando {
+    width: 100%;
+    background-color: #1751c4;
+    color: white;
+    padding: 10px;
+    margin: 12px 0 0 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#Cadastro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    background-color: rgb(255, 255, 255);
+    padding:  10px;
+    border: none;
+    border-radius: 6px;
+	box-shadow: 35px 23px 10px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    width: 150px;
+    /* Define a largura */
+    height: auto;
+    /* Mantém a proporção */
+    border: 2px solid #222222;
+    /* Borda */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    margin: 10px;
+    /* Margem */
+    display: block;
+    /* Centraliza na tela */
+    margin-left: auto;
+    margin-right: auto;
+}
